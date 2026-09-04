@@ -29,4 +29,16 @@ jobs:
           echo "This is the testing module"
           pwd
           ls -la
+
+  job3:
+    needs: [job1]
+    name: Checking the server
+    runs-on: ubuntu-latest
+    steps:
+      - name: This is the check the server space
+        run: df -h
+      - name: This is to check the ram on the server
+        run: free -h
+      - name: This is to check the host details
+        run: hostname
           
