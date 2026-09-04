@@ -1,0 +1,47 @@
+name: First_workflow 
+# this is the workflo name
+on: 
+# workflow dispatch works for manual trigger the workflow and the schedule worksto run the flow every 5 min
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  job1:
+    name: Check_Basic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the current directory and the files in it
+        run: |
+          pwd
+          ls -al
+          hostname
+      
+      - name: Create a folder and file 
+        run: |
+          mkdir Data
+          echo "This is my task to be done on prod" >> ./Data/pic.txt
+          cat ./Data/pic.txt
+  job2:
+    needs: [job1]
+    name: CHCEK THE LIST
+    runs-on: ubuntu-latest
+    steps:
+      - name: this is the tesing module
+        run: |
+          echo "This is the testing module"
+          pwd
+          ls -la
+
+  job3:
+    needs: [job1]
+    name: Checking the server
+    runs-on: ubuntu-latest
+    steps:
+      - name: This is the check the server space
+        run: df -h
+      - name: This is to check the ram on the server
+        run: free -h
+      - name: This is to check the host details
+        run: hostname
+          
