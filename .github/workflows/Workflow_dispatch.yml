@@ -37,6 +37,14 @@ jobs:
     # Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset.
           python-version: '3.11'     
 
+  job3:
+    needs: [job1,job2]
+    name: Check the python is installed 
+    runs-on: ubuntu-latest
+    steps:
+       - name: Check python
+         run: print("This is the task")
+      
 
 
   
