@@ -2,7 +2,7 @@ name: First_workflow
 # this is the workflo name
 on: 
 # workflow dispatch works for manual trigger the workflow and the schedule worksto run the flow every 5 min
-  workflow_dispatch:
+#  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
 
