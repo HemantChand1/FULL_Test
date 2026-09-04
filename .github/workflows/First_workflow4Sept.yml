@@ -19,3 +19,14 @@ jobs:
           mkdir Data
           echo "This is my task to be done on prod" >> ./Data/pic.txt
           cat ./Data/pic.txt
+  job2:
+    needs: [job1]
+    name: CHCEK THE LIST
+    runs-on: ubuntu-latest
+    steps:
+      - name: this is the tesing module
+        run: |
+          echo "This is the testing module"
+          pwd
+          ls -la
+          
