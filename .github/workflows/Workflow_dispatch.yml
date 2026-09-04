@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Check python
-         run: print("This is the task")
+         run: python3 -c 'print("This is the task")'
       
 
 
