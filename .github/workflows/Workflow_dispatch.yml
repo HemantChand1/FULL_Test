@@ -30,6 +30,13 @@ jobs:
 
       - name: testing the data
         run: ls -al
-        
+      
+      - name: Setup Python
+        uses: actions/setup-python@v6.2.0
+        with:
+    # Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset.
+          python-version: '3.11'     
+
+
 
   
