@@ -1,0 +1,35 @@
+name: First_workflow 
+# this is the workflo name
+on: 
+# workflow dispatch works for manual trigger the workflow and the schedule worksto run the flow every 5 min
+  workflow_dispatch:
+  
+jobs:
+  job1:
+    name: Check_Basic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the current directory and the files in it
+        run: |
+          pwd
+          ls -al
+          hostname
+      
+      - name: Create a folder and file 
+        run: |
+          mkdir Data
+          echo "This is my task to be done on prod" >> ./Data/pic.txt
+          cat ./Data/pic.txt
+  job2:
+    needs: [job1]
+    name: CHCEK THE LIST
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.1.0
+
+      - name: testing the data
+        run: ls -al
+        
+
+  
