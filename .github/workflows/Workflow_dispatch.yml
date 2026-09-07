@@ -46,7 +46,7 @@ jobs:
          run: python3 -c 'print("This is the task")'
 
        - name:
-         run: python3 -c 'print("THis is the task to be completed ")
+         run: python3 -c 'print("THis is the task to be completed ")'
       
 
 
