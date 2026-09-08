@@ -1,0 +1,38 @@
+name:Artifact_test
+
+on: 
+  push:
+
+jobs:
+  JOB1:
+    name: Artifact creation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Current location testing
+        run: |
+          pwd
+          ls -al
+          whoami
+          hostname
+      - name: adding files to the system
+        run: |
+          echo "This is my first task" > b1.txt
+          echo "this is what the artifact will be used to create" > artifact/b2.txt
+      - name: checking files
+        run: |
+          pwd
+          ls -la
+  JOB2:
+    name: build creation 
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v5.1.0
+     - name: check now 
+       run: |
+         ls -al
+         pwd
+         ls -al ./artifact/
+
+
+          
