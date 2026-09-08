@@ -40,6 +40,15 @@ jobs:
          path:
            ./b1.txt
            ./artifact/
+
+     - name: Download a Build Artifact 
+       uses: actions/download-artifact@v7.0.0 #git market place 
+       with: 
+          name: multiple_path 
+     - name: checking current directory post download 
+       run: | 
+          pwd 
+          ls -al 
            
 
           
