@@ -8,7 +8,7 @@ jobs:
     steps:
       
       - name: Checkout
-        uses: actions/checkout@v5.1.0
+        uses: actions/checkout@v4.4.0
         
       - name: Current location testing
         run: |
@@ -33,7 +33,7 @@ jobs:
          pwd
 
       - name: upload
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         with:
          name: multiple_path 
          path:
@@ -41,7 +41,7 @@ jobs:
            ./artifact/
 
       - name: Download a Build Artifact 
-        uses: actions/download-artifact@v7.0.0 #git market place 
+        uses: actions/download-artifact@v4.0.0 #git market place 
         with: 
           name: multiple_path 
       - name: checking current directory post download 
