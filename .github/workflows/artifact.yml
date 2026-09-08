@@ -6,12 +6,17 @@ jobs:
     name: Artifact creation
     runs-on: ubuntu-latest
     steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v5.1.0
+        
       - name: Current location testing
         run: |
           pwd
           ls -al
           whoami
           hostname
+      
       - name: adding files to the system
         run: |
           mkdir artifact
